@@ -1,0 +1,13 @@
+
+
+divide(_,[],[],[]).
+
+divide(Pivote, [Cab|Resto], [Cab|R1], R2):- divide(Pivote, Resto, R1, R2), Cab <= Pivote.
+
+divide(Pivote, [Cab]Resto], R1, [Cab|R2]):- divide(Pivote, Resto, R1, R2), Cab > Pivote.
+
+
+qsort([],[]).
+
+qsort([Cab|Resto], ):- qsort(R1, Menores), qsort(R2, Mayores), divide(Cab, Resto, R1, R2), append(Menores,Mayores,R).
+
